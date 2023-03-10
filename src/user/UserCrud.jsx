@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from 'axios'
 import Main from "../components/template/Main";
-
+// eslint-disable-next-line react/no-deprecated
 const headerProps = {
     icon: 'users',
     title: 'Usuários',
@@ -18,7 +18,7 @@ export default class UserCrud extends Component {
 
     state = { ...initialState }
 
-    componentWillMount() {
+    componentDidMount() {
         axios(baseUrl).then(resp => {
             this.setState({ list: resp.data })
         })
