@@ -1,0 +1,16 @@
+footer.footer{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 25px;
+    background-color:#FFF;
+    box-shadow: var(--shadow);
+}
+@media(max-width:576px){
+    footer.footer{
+        font-size: 12px;
+        display: flex;
+        align-items: start;
+        justify-content: flex-start;
+    }
+}
