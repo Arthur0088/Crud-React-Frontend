@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import axios from 'axios'
 import Main from "../components/template/Main";
-// eslint-disable-next-line react/no-deprecated
+
 const headerProps = {
     icon: 'users',
     title: 'Usuários',
     subtitle: 'Cadastro de usuários: Incluir, Listar, Alterar e Excluir!'
 }
 
-const baseUrl ='https://crud-api-v0fa.onrender.com/users'
+const baseUrl = 'http://crud-api-v0fa.onrender.com/users'
 const initialState = {
     user: { name: '', email: '' },
     list: []
@@ -18,7 +18,7 @@ export default class UserCrud extends Component {
 
     state = { ...initialState }
 
-    componentDidMount() {
+    componentWillMount() {
         axios(baseUrl).then(resp => {
             this.setState({ list: resp.data })
         })
